@@ -1,0 +1,194 @@
+{
+  "flights": [
+    {
+      "id": 1,
+      "flightId": 1,
+      "from": "Hyderabad",
+      "to": "Benguluru",
+      "flightNo": "12345",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 2,
+      "flightId": 2,
+      "from": "Benguluru",
+      "to": "Hyderabad",
+      "flightNo": "87676",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 3,
+      "flightId": 3,
+      "from": "Chennai",
+      "to": "Vizag",
+      "flightNo": "34567",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 4,
+      "flightId": 4,
+      "from": "Vizag",
+      "to": "Chennai",
+      "flightNo": "12321",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 5,
+      "flightId": 5,
+      "from": "Hyderabad",
+      "to": "Benguluru",
+      "flightNo": "12345",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 6,
+      "flightId": 6,
+      "from": "Benguluru",
+      "to": "Hyderabad",
+      "flightNo": "87676",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 7,
+      "flightId": 7,
+      "from": "Chennai",
+      "to": "Vizag",
+      "flightNo": "34567",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    },
+    {
+      "id": 8,
+      "flightId": 8,
+      "from": "Vizag",
+      "to": "Chennai",
+      "flightNo": "12321",
+      "flightName": "King Fisher",
+      "price": "$ 1000"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "userName": "Sivaraju",
+      "emailID": "siva@gmail.com",
+      "mobile": "123456",
+      "travelarInfo": [
+        {
+          "adult": "",
+          "child": ""
+        }
+      ],
+      "promoCode": [
+        {
+          "code1": "AX",
+          "code2": "BX",
+          "code3": "CX",
+          "code4": "DX"
+        }
+      ]
+    }
+  ],
+  "bookedFlights": [
+    {
+      "id": 1,
+      "flightId": 1,
+      "from": "Hyderabad",
+      "to": "Benguluru",
+      "flightNo": "12345",
+      "flightName": "King Fisher",
+      "price": "$ 1000",
+      "bookedDate": "2022-06-17",
+      "adults": [
+        {
+          "personName": "",
+          "gender": "",
+          "age": "",
+          "menuType": ""
+        }
+      ],
+      "pending": true
+    },
+    {
+      "id": 2,
+      "flightId": 2,
+      "from": "Benguluru",
+      "to": "Hyderabad",
+      "flightNo": "87676",
+      "flightName": "King Fisher",
+      "price": "$ 1000",
+      "bookedDate": "2022-06-24",
+      "adults": [
+        {
+          "personName": "dghhdg",
+          "gender": "Male",
+          "age": "45",
+          "menuType": "Veg"
+        },
+        {
+          "personName": "fdgdf",
+          "gender": "Female",
+          "age": "56",
+          "menuType": "Veg"
+        }
+      ],
+      "pending": true
+    },
+    {
+      "id": 5,
+      "flightId": 5,
+      "from": "Hyderabad",
+      "to": "Benguluru",
+      "flightNo": "12345",
+      "flightName": "King Fisher",
+      "price": "$ 1000",
+      "bookedDate": "2022-06-18",
+      "adults": [
+        {
+          "personName": "",
+          "gender": "",
+          "age": "",
+          "menuType": ""
+        }
+      ],
+      "pending": true
+    },
+    {
+      "id": 4,
+      "flightId": 4,
+      "from": "Vizag",
+      "to": "Chennai",
+      "flightNo": "12321",
+      "flightName": "King Fisher",
+      "price": "$ 1000",
+      "bookedDate": "2022-06-06",
+      "adults": [
+        {
+          "personName": "",
+          "gender": "",
+          "age": "",
+          "menuType": ""
+        },
+        {
+          "personName": "",
+          "gender": "",
+          "age": "",
+          "menuType": ""
+        },
+        {
+          "personName": "",
+          "gender": "",
+          "age": "",
+          "menuType": ""
+        }
+      ],
+      "pending": true
+    }
+  ]
+}

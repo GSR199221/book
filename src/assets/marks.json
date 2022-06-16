@@ -1,0 +1,84 @@
+{
+    "marks": [
+        {
+            "Name": "John",
+            "Class": 4,
+            "Section": "B",
+            "Sub1": 85,
+            "Sub2": 66,
+            "Sub3": 84
+        },
+        {
+            "Name": "Ramesh",
+            "Class": 6,
+            "Section": "C",
+            "Sub1": 89,
+            "Sub2": 60,
+            "Sub3": 90
+        },
+        {
+            "Name": "Suresh",
+            "Class": 2,
+            "Section": "E",
+            "Sub1": 87,
+            "Sub2": 55,
+            "Sub3": 68
+        },
+        {
+            "Name": "Venkat",
+            "Class": 3,
+            "Section": "A",
+            "Sub1": 54,
+            "Sub2": 63,
+            "Sub3": 77
+        },
+        {
+            "Name": "Ram",
+            "Class": 7,
+            "Section": "C",
+            "Sub1": 88,
+            "Sub2": 78,
+            "Sub3": 92
+        },
+        {
+            "Name": "Bharatraj",
+            "Class": 7,
+            "Section": "C",
+            "Sub1":40,
+            "Sub2": 68,
+            "Sub3": 50
+        },
+        {
+            "Name": "Monoj",
+            "Class": 9,
+            "Section": "A",
+            "Sub1": 83,
+            "Sub2": 77,
+            "Sub3": 65
+        },
+        {
+            "Name": "Aditya",
+            "Class": 2,
+            "Section": "B",
+            "Sub1": 79,
+            "Sub2": 96,
+            "Sub3": 74
+        },
+        {
+            "Name": "Ajesh",
+            "Class": 6,
+            "Section": "A",
+            "Sub1": 99,
+            "Sub2": 80,
+            "Sub3": 76
+        },
+        {
+            "Name": "Prakash",
+            "Class": 8,
+            "Section": "E",
+            "Sub1": 99,
+            "Sub2": 80,
+            "Sub3": 76
+        }
+    ]
+}

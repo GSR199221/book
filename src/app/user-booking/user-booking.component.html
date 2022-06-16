@@ -1,0 +1,258 @@
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" #one data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true">Book Flight</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" #two data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false">Manage Bookings</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" #three data-bs-toggle="tab" data-bs-target="#contact"
+                type="button" role="tab" aria-controls="contact" aria-selected="false">Booking History</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+            <div *ngIf="!isSelectedFlight" class="card">
+
+                <form class="row p-4" [formGroup]="form">
+                    <div class="col-4 offset-2 mb-3">
+                        <label for="Email" class="form-label">From</label>
+                        <select formControlName="from" class="form-select" aria-label="Default select example">
+                            <option [value]=from *ngFor="let from of fromList">{{from}}</option>
+                        </select>
+                        <div id="Email" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <label for="Email" class="form-label">To</label>
+                        <select formControlName="to" class="form-select" aria-label="Default select example">
+                            <option [value]=val *ngFor="let val of toList">{{val}}</option>
+                        </select>
+                        <div id="Email" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="col-4 offset-2 mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Date</label>
+                        <input formControlName="date" type="date" class="form-control" id="exampleInputPassword1">
+                    </div>
+
+                    <div class="col-4 mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Return (Optional)</label>
+                        <input formControlName="returnDate" type="date" class="form-control" id="exampleInputPassword1">
+                    </div>
+
+                    <div class="col-8 offset-2 mt-3" style="text-align: center;">
+                        <button type="submit" (click)="search()" class="btn btn-primary">Search Flights</button>
+                    </div>
+
+                </form>
+
+                <div class="row mb-2">
+                    <div class="col-8 offset-2">
+                        <ol class="list-group-item" [class.active]="isActive==i"
+                            *ngFor="let row of flightList;let i=index">
+                            <div class="row">
+                                <div class="col-2">{{row.flightName}}</div>
+                                <div class="col-2">{{row.flightNo}}</div>
+                                <div class="col-2">{{row.bookedDate}}</div>
+                                <div class="col-2">{{row.from}}</div>
+                                <div class="col-2">{{row.to}}</div>
+                                <div class="col-2">
+                                    <button type="submit" (click)="onSelectFlight(i,row)" class="btn btn-primary">Book
+                                        Flight</button>
+                                </div>
+
+                            </div>
+                        </ol>
+                    </div>
+
+                    <!-- <div class="col-4">
+                        <ol class="list-group-item" [class.active]="isActive==i"
+                            *ngFor="let row of flightList;let i=index">{{row.flightName}}
+                            {{row.flightNo}}
+                        </ol>
+                    </div> -->
+                </div>
+            </div>
+
+            <div *ngIf="isSelectedFlight" class="card">
+
+                <div class="row">
+                    <div class="col-2">{{selectedFlight.flightName}}</div>
+                    <div class="col-2">{{selectedFlight.price}}</div>
+                    <div class="col-2">{{selectedFlight.bookedDate}}</div>
+                    <div class="col-2">{{selectedFlight.from}}</div>
+                    <div class="col-2">{{selectedFlight.to}}</div>
+
+                </div>
+                <div class="mt-3">
+                    <form class="row" [formGroup]="userform">
+                        <div formArrayName="adults">
+                            <div *ngFor="let employee of employees().controls; let i=index">
+                                <div [formGroupName]="i">
+                                    <div class="col-3">
+                                        <label for="person" class="form-label">person</label>
+                                        <input type="text" formControlName="personName" class="form-control">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select class="form-select" formControlName="gender"
+                                            aria-label="Default select example">
+                                            <option selected>Open this select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="age" class="form-label">age</label>
+                                        <input type="text" formControlName="age" class="form-control">
+                                    </div>
+
+                                    <div class="col-2">
+                                        <label for="mealType" class="form-label">Meal Type</label>
+                                        <!-- <input type="text" formControlName="age" class="form-control"> -->
+
+                                        <select class="form-select" formControlName="menuType"
+                                            aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="Veg">veg</option>
+                                            <option value="Non-Veg">non veg</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <button (click)="addEmployee()">Add Adult</button>
+                            </div>
+                            <div class="col-2">
+                                <button (click)="countinueBooking()">Book Now</button>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- <div class="col-8 offset-2 mb-3">
+                            <h4>
+                                Traveler Info
+                            </h4>
+                            <label for="exampleInputPassword1" class="form-label">Adult 1</label>
+                            <input formControlName="travellerCount" type="text" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+    
+                        <div class="col-4 offset-2 mb-3">
+                            <p>
+                                Total Price: <strong>{{selectedFlight?.price}}</strong>
+                            </p>
+                        </div>
+                        <div class="col-4  mb-3 d-grid gap-2">
+                            <button type="submit" (click)="countinueBooking()" class="btn btn-block btn-primary">Countinue
+                                to Booking</button>
+                        </div> -->
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="card mt-3">
+                <form class="row p-4" [formGroup]="userform">
+                    <div class="col-4 offset-2 mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="text" formControlName="useremail" class="form-control">
+                        <div id="Email" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="col-4  mb-3">
+                        <label for="Email" class="form-label">Phone</label>
+                        <input type="text" formControlName="userphone" class="form-control">
+                        <div id="Email" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="col-8 offset-2 mb-3">
+                        <h4>
+                            Traveler Info
+                        </h4>
+                        <label for="exampleInputPassword1" class="form-label">Adult 1</label>
+                        <input formControlName="travellerCount" type="text" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+
+                    <div class="col-4 offset-2 mb-3">
+                        <p>
+                            Total Price: <strong>{{selectedFlight?.price}}</strong>
+                        </p>
+                    </div>
+                    <div class="col-4  mb-3 d-grid gap-2">
+                        <button type="submit" (click)="countinueBooking()" class="btn btn-block btn-primary">Countinue
+                            to Booking</button>
+                    </div>
+                </form>
+            </div> -->
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row mt-3">
+                <div class="col-8 offset-2">
+                    <ul class="list-group">
+                        {{bookedFlghtsList|json}}
+                        <li class="list-group-item" *ngFor="let flight of bookedFlghtsList">
+                            <div class="row">
+                                <div class="col-6">
+                                    <span>
+                                        {{flight.flightName}} {{flight.bookedDate}} {{flight.price}}
+                                    </span>
+                                </div>
+                                <div class="col-2">
+                                    <span>
+                                        <button type="button" (click)="bookingHstory(flight)"
+                                            class="btn btn-primary btn-sm">View</button>
+                                    </span>
+                                </div>
+                                <div class="col-2">
+                                    <span>
+                                        <button type="button" (click)="bookingHstory(flight)"
+                                            class="btn btn-primary btn-sm">Download</button>
+                                    </span>
+                                </div>
+                                <div class="col-2">
+                                    <span *ngIf="flight.pending">
+                                        <button type="button" class="btn btn-primary btn-sm"
+                                            (click)="cancelFlight(flight)">Cancel</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            {{flightBookHistory|json}}
+        </div>
+    </div>
+</div>

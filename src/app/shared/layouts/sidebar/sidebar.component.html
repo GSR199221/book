@@ -1,0 +1,13 @@
+<nav class="nav-container">
+    <h2>
+        Navigation
+    </h2>
+    <ul class="menu-list">
+        <li class="menu-item" [class.active-item]="i===isActive" (click)='navigate(i,menu.path)'*ngFor="let menu of menuItems;let i=index">
+            <a class="menu-link">{{menu.menu}}</a>
+        </li>
+    </ul>
+</nav>
+
+
+  

@@ -1,0 +1,86 @@
+{
+    "flights": [
+        {
+            "id": 1,
+            "flightName": "Indigo",
+            "flightNumber": "A1",
+            "originCity": "Hyderabad",
+            "originAirport": "shamsabad",
+            "destinationCity": "Banglore",
+            "destinationAirport": "Kempegowda",
+            "arrivedDate": "20-04-22",
+            "arrivedTime": "06:02 PM",
+            "departureDate": "20-04-22",
+            "departureTime": "06:02 PM",
+            "price": "5,500",
+            "flightId": 3
+        },
+        {
+            "id": 2,
+            "flightName": "King Fisher",
+            "flightNumber": "A2",
+            "originCity": "Banglore",
+            "destinationAirport": "shamsabad",
+            "destinationCity": "Hyderabad",
+            "originAirport": "Kempegowda",
+            "arrivedDate": "20-04-22",
+            "arrivedTime": "06:02 AM",
+            "departureDate": "20-04-22",
+            "departureTime": "08:02 AM",
+            "price": "6,500",
+            "flightId": 3
+        },
+        {
+            "id": 3,
+            "flightName": "King Fisher",
+            "flightNumber": "A2",
+            "originCity": "Banglore",
+            "destinationAirport": "shamsabad",
+            "destinationCity": "Hyderabad",
+            "originAirport": "Kempegowda",
+            "arrivedDate": "20-04-22",
+            "arrivedTime": "06:02 AM",
+            "departureDate": "20-04-22",
+            "departureTime": "08:02 AM",
+            "price": "6,500",
+            "flightId": 2
+        },
+        {
+            "id": 4,
+            "flightName": "King Fisher",
+            "flightNumber": "A2",
+            "originCity": "Banglore",
+            "destinationAirport": "shamsabad",
+            "destinationCity": "Hyderabad",
+            "originAirport": "Kempegowda",
+            "arrivedDate": "20-04-22",
+            "arrivedTime": "06:02 AM",
+            "departureDate": "20-04-22",
+            "departureTime": "08:02 AM",
+            "price": "6,500",
+            "flightId": 5
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "userName": "Sivaraju",
+            "emailID": "siva@gmail.com",
+            "mobile": "123456",
+            "travelarInfo": [
+                {
+                    "adult": "",
+                    "child": ""
+                }
+            ],
+            "promoCode": [
+                {
+                    "code1": "AX",
+                    "code2": "BX",
+                    "code3": "CX",
+                    "code4": "DX"
+                }
+            ]
+        }
+    ]
+}

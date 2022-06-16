@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card">
+
+        <form class="p-4" [formGroup]="form">
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" formControlName="username"  class="form-control" id="Username" aria-describedby="emailHelp">
+                <div id="Username" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" formControlName="userEmail"  class="form-control" id="Email" aria-describedby="emailHelp">
+                <div id="Email" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="Phone" class="form-label">Phone</label>
+                <input formControlName="phone" type="number" class="form-control" id="Phone" aria-describedby="emailHelp">
+                <div id="Phone" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="row" style="margin-left: 2px;">
+
+                <div class="mb-3 form-check col-2">
+                    <input formControlName="gender" name="gender" type="radio" class="form-check-input" id="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+
+                <div class="mb-3 form-check col-2">
+                    <input formControlName="gender" name="gender" value="female" type="radio" class="form-check-input" id="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+
+            <button type="submit" (click)="register()" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
